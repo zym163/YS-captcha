@@ -1,10 +1,11 @@
 {
     "name": "ys-captcha",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": {
-        "name": "zym",
-        "email": "786343536@qq.com",
-        "github": "https://github.com/zym163"
+        "url": "https://www.makeit.vip",
+        "name": "lirongtong",
+        "email": "lirongtong@hotmail.com",
+        "github": "https://github.com/lirongtong"
     },
     "keywords": [
         "vue",
@@ -16,7 +17,7 @@
         "makeit-component",
         "vue-component"
     ],
-    "description": "YS Captcha 滑块验证码组件，是基于 Vue3.x + Vite2.x + Canvas 开发，动态生成验证滑块，结合后端进行二次校验，能有效避免被恶意抓取后的模拟验证，进一步提升验证码的可靠性。",
+    "description": "Makeit Captcha 滑块验证码组件，是基于 Vue3.x + Vite2.x + Canvas 开发，动态生成验证滑块，结合后端进行二次校验，能有效避免被恶意抓取后的模拟验证，进一步提升验证码的可靠性。",
     "private": false,
     "license": "MIT",
     "repository": {
@@ -26,6 +27,7 @@
     "bugs": {
         "url": "https://github.com/zym163/YS-captcha/issues"
     },
+    "homepage": "https://admin.makeit.vip/components/captcha",
     "files": [
         "dist",
         "lib",
