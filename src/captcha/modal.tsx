@@ -12,7 +12,6 @@ import {
 } from '../utils/global'
 import { $request } from '../utils/request'
 import { captchaModalProps } from './props'
-import MiCaptcha from './captcha'
 export default defineComponent({
     name: 'MiCaptchaModal',
     inheritAttrs: false,
@@ -135,7 +134,7 @@ export default defineComponent({
                 being: false,
                 value: null,
                 correct: false,
-                tip: '拖动滑块将悬浮图像正确拼合',
+                tip: props.local.enum9,
                 show: false
             }
         }
@@ -223,9 +222,9 @@ export default defineComponent({
                 params.ctx.image.shadowColor = 'transparent'
                 params.ctx.image.shadowBlur = 0
                 params.ctx.image.font = 'bold 24px MicrosoftYaHei'
-                params.ctx.image.fillText('拖动滑块拼合图片', 12, 30)
+                // params.ctx.image.fillText('拖动滑块拼合图片', 12, 30)
                 params.ctx.image.font = '16px MicrosoftYaHei'
-                params.ctx.image.fillText('就能验证成功哦', 12, 55)
+                // params.ctx.image.fillText('就能验证成功哦', 12, 55)
                 params.ctx.image.closePath()
                 /** block */
                 params.ctx.block.save()
@@ -408,7 +407,7 @@ export default defineComponent({
                     }, 500)
                 }
                 const take = Math.round((params.time.end - params.time.start) / 10) / 100
-                params.check.tip = `${take}s速度完成图片拼合验证`
+                params.check.tip = `${take}s${props.local.enum10}`
                 if (props.verifyAction) {
                     await $request[props.verifyMethod.toLowerCase()](
                         props.verifyAction,
@@ -516,7 +515,7 @@ export default defineComponent({
                             </div>
                         </div>
                     </div>
-                    <div class={`${loadingCls}-tip`}>正在加载验证码 ···</div>
+                    <div class={`${loadingCls}-tip`} innerHTML={props.local.enum11}></div>
                 </div>
             ) : null
         }
@@ -548,9 +547,9 @@ export default defineComponent({
             const style = { borderColor: props.themeColor ?? null }
             return (
                 <div class={sliderTrackCls} style={style}>
-                    <span class={`${sliderTrackCls}-tip${params.drag.moving ? ' hide' : ''}`}>
-                        拖动左边滑块完成上方拼图
-                    </span>
+                    <span
+                        class={`${sliderTrackCls}-tip${params.drag.moving ? ' hide' : ''}`}
+                        innerHTML={props.local.enum3}></span>
                 </div>
             )
         }
@@ -576,7 +575,7 @@ export default defineComponent({
             return (
                 <div class={panelActionCls}>
                     <Tooltip
-                        title="关闭验证"
+                        title={props.local.enum6}
                         autoAdjustOverflow={false}
                         overlayClassName={`${prefixCls}-tooltip`}
                         color={props.themeColor}>
@@ -584,7 +583,7 @@ export default defineComponent({
                     </Tooltip>
 
                     <Tooltip
-                        title="刷新验证"
+                        title={props.local.enum7}
                         autoAdjustOverflow={false}
                         overlayClassName={`${prefixCls}-tooltip`}
                         color={props.themeColor}>

@@ -32,7 +32,7 @@ export default defineComponent({
             init: false,
             failed: false,
             pass: false,
-            tip: props.initAction ? '正在初始化验证码 ···' : '点击按钮进行验证',
+            tip: props.initAction ? props.local.enum11 : props.local.enum1,
             timer: null,
             status: {
                 ready: true,
@@ -62,7 +62,7 @@ export default defineComponent({
         })
 
         const initCaptcha = () => {
-            const afterInit = (tip = '点击按钮进行验证') => {
+            const afterInit = (tip = props.local.enum1) => {
                 params.failed = false
                 params.init = true
                 params.tip = tip
@@ -118,7 +118,7 @@ export default defineComponent({
             params.status.being = true
             params.modal.pos = getCaptchaModalPosition()
             params.modal.show = true
-            params.tip = '请移动滑块，完成验证'
+            params.tip = props.local.enum2
         }
 
         const closeCaptchaModal = (data: any) => {
@@ -185,7 +185,7 @@ export default defineComponent({
         }
 
         const success = (data: any) => {
-            params.tip = '通过验证'
+            params.tip = props.local.enum8
             emit('success', data)
             setTimeout(() => {
                 params.modal.show = false
@@ -200,7 +200,7 @@ export default defineComponent({
             params.status.success = false
             params.status.scanning = false
             params.status.ready = true
-            params.tip = '点击按钮进行验证'
+            params.tip = props.local.enum1
         }
 
         const resize = () => {

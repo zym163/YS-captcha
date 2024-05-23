@@ -32,7 +32,8 @@ export const captchaProps = () => ({
     checkParams: PropTypes.object.def({}),
     checkAction: PropTypes.string,
     checkMethod: PropTypes.oneOf(tuple(...$g.methods)).def('post'),
-    actionConfig: PropTypes.object.def({})
+    actionConfig: PropTypes.object.def({}),
+    local: PropTypes.object.def({})
 })
 
 export const captchaModalProps = () => ({
@@ -51,5 +52,6 @@ export const captchaModalProps = () => ({
     verifyParams: PropTypes.object.def({}),
     verifyMethod: PropTypes.string.def('post'),
     verifyAction: PropTypes.string,
-    actionConfig: PropTypes.object.def({})
+    actionConfig: PropTypes.object.def({}),
+    local: PropTypes.object.def({})
 })
