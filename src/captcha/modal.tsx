@@ -1,6 +1,6 @@
 import { defineComponent, ref, reactive, onMounted, onBeforeUnmount, Transition } from 'vue'
 import { Tooltip } from 'ant-design-vue'
-import { CloseCircleOutlined, ReloadOutlined, QuestionCircleOutlined } from '@ant-design/icons-vue'
+import { CloseCircleOutlined, ReloadOutlined } from '@ant-design/icons-vue'
 import { getPrefixCls } from '../utils/props-tools'
 import { $tools } from '../utils/tools'
 import {
