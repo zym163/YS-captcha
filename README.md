@@ -1,27 +1,7 @@
-<p align="center">
-    <a href="https://admin.makeit.vip/">
-        <img width="200" src="https://file.makeit.vip/MIITVIP/M00/00/00/K4vDRGPcbmmAG8_sAAAtlj6Tt_s562.png">
-    </a>
-</p>
-
-<h1 align="center" color="green">
-    <a href="https://admin.makeit.vip/components/captcha" target="_blank" style="color: #41b995">
-        Makeit Captcha
-    </a>
-</h1>
-
-<div align="center">
-
 基于 Vue3.x + Vite4.x 开发，动态生成验证滑块的验证码组件
 
-[![npm package](https://img.shields.io/npm/v/makeit-captcha.svg?style=flat-square)](https://www.npmjs.org/package/makeit-captcha)
-[![npm_downloads](http://img.shields.io/npm/dm/makeit-captcha.svg?style=flat-square)](http://www.npmtrends.com/makeit-captcha)
-![MIT](https://img.shields.io/badge/license-MIT-ff69b4.svg)
-![webpack](https://img.shields.io/badge/webpack-5.73.0-orange.svg)
-![vue](https://img.shields.io/badge/vue-3.2.47-green.svg)
-![vite](https://img.shields.io/badge/vite-4.1.1-yellow.svg)
-![axios](https://img.shields.io/badge/axios-1.3.2-red.svg)
-![ant design vue](https://img.shields.io/badge/ant%20design%20vue-3.x-blueviolet.svg)
+[![npm package](https://img.shields.io/npm/v/makeit-captcha.svg?style=flat-square)](https://www.npmjs.org/package/makeit-captcha) [![npm_downloads](http://img.shields.io/npm/dm/makeit-captcha.svg?style=flat-square)](http://www.npmtrends.com/makeit-captcha) ![MIT](https://img.shields.io/badge/license-MIT-ff69b4.svg) ![webpack](https://img.shields.io/badge/webpack-5.73.0-orange.svg) ![vue](https://img.shields.io/badge/vue-3.2.47-green.svg) ![vite](https://img.shields.io/badge/vite-4.1.1-yellow.svg) ![axios](https://img.shields.io/badge/axios-1.3.2-red.svg) ![ant design vue](https://img.shields.io/badge/ant%20design%20vue-3.x-blueviolet.svg)
+
 </div>
 
 ## 关于
@@ -39,15 +19,15 @@
 ## 安装
 
 ```bash
-npm i makeit-captcha
+npm i YS-captcha
 ```
 
 ## 使用
 
 ```ts
 import { createApp } from 'vue'
-import MakeitCaptcha from 'makeit-captcha'
-import 'makeit-captcha/dist/captcha.min.css'
+import MakeitCaptcha from 'YS-captcha'
+import 'YS-captcha/dist/captcha.min.css'
 import App from './app.vue'
 
 const app = createApp(App)
@@ -72,7 +52,7 @@ app.mount('#app')
         <mi-captcha theme-color="#2F9688"
             border-color="#2F9688"
             box-shadow-color="#2F9688" />
-        
+
         <!-- 自定义初始化 / 校验等 -->
         <mi-captcha theme-color="#be6be0"
             init-action="v1/captcha/init"
@@ -90,7 +70,7 @@ app.mount('#app')
     const params = reactive({
         verify: { key: null }
     })
-    
+
     const initAfter = (res) => {
         if (res?.ret?.code === 200) {
             localStorage.setItem('mi-captcha-key', res?.data?.key)
