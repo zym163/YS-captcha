@@ -12,7 +12,7 @@ import {
 } from '../utils/global'
 import { $request } from '../utils/request'
 import { captchaModalProps } from './props'
-
+import MiCaptcha from './captcha'
 export default defineComponent({
     name: 'MiCaptchaModal',
     inheritAttrs: false,
@@ -381,6 +381,7 @@ export default defineComponent({
         }
 
         const dragReset = () => {
+            refreshCaptcha()
             params.elements.slider.style.left = 0
             params.elements.block.style.left = 0
             params.drag.originX = 0
@@ -392,6 +393,7 @@ export default defineComponent({
             if (params.check.being) return
             params.check.being = true
             const error = (msg = null) => {
+                console.log('失败了！')
                 setTimeout(() => {
                     dragReset()
                 }, 1000)
@@ -492,7 +494,7 @@ export default defineComponent({
                     </div>
                     <div class={`${prefixCls}-panel`}>
                         {renderPanelAction()}
-                        {renderPanelCopyright()}
+                        {/* {renderPanelCopyright()} */}
                     </div>
                 </div>
             )
@@ -588,32 +590,6 @@ export default defineComponent({
                         color={props.themeColor}>
                         <ReloadOutlined onClick={refreshCaptcha} />
                     </Tooltip>
-
-                    <Tooltip
-                        title="帮助反馈"
-                        autoAdjustOverflow={false}
-                        overlayClassName={`${prefixCls}-tooltip`}
-                        color={props.themeColor}>
-                        <a href={params.target} target="_blank">
-                            <QuestionCircleOutlined />
-                        </a>
-                    </Tooltip>
-                </div>
-            )
-        }
-
-        const renderPanelCopyright = () => {
-            const copyrightCls = `${prefixCls}-copyright`
-            return (
-                <div class={copyrightCls}>
-                    <div class={`${copyrightCls}-text`}>
-                        <>
-                            <a href={params.target} target="_blank">
-                                <img src={params.avatar} alt={params.powered} />
-                            </a>
-                            <span>提供技术支持</span>
-                        </>
-                    </div>
                 </div>
             )
         }

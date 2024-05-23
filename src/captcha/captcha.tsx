@@ -6,7 +6,6 @@ import { $tools } from '../utils/tools'
 import { $g, MI_POWERED, MI_TARGET, MI_DEFAULT_AVATAT } from '../utils/global'
 import { $request } from '../utils/request'
 import MiCaptchaModal from './modal'
-
 export default defineComponent({
     name: 'MiCaptcha',
     inheritAttrs: false,
@@ -123,6 +122,7 @@ export default defineComponent({
         }
 
         const closeCaptchaModal = (data: any) => {
+            console.log(data, 'dataclose')
             if (data) {
                 if (data.status === 'close') reset()
                 if (data.status === 'success') success(data.data)
@@ -266,7 +266,6 @@ export default defineComponent({
                     {renderRadarBeing()}
                     {renderRadarSuccess()}
                     {renderRadarTip()}
-                    {renderRadarLogo()}
                 </div>
             )
         }
@@ -338,19 +337,6 @@ export default defineComponent({
                         : props.textColor ?? null
             } as any
             return <div class={cls} style={style} innerHTML={params.tip} />
-        }
-
-        const renderRadarLogo = () => {
-            const height = props.height && props.height > 40 ? props.height : null
-            const top = height ? Math.round(((height - 20) / 2) * 100) / 100 - 1 : null
-            const style = { top: height ? $tools.convert2Rem(top) : null }
-            return (
-                <div class={`${prefixCls}-radar-logo`} style={style}>
-                    <a href={params.target} target="_blank">
-                        <img src={props.logo ?? params.avatar} alt={params.powered} />
-                    </a>
-                </div>
-            )
         }
 
         const resetCaptcha = (reinit = true) => {
