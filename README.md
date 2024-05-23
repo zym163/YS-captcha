@@ -6,7 +6,7 @@
 
 ## 关于
 
-> Makeit Captcha 2.x 滑块验证码组件，基于 Vue3.x + Vite4.x + Canvas 开发，动态生成验证滑块，结合后端进行二次校验，能有效避免被恶意抓取后的模拟验证，进一步提升验证码的可靠性。
+> YS Captcha 2.x 滑块验证码组件，基于 Vue3.x + Vite4.x + Canvas 开发，动态生成验证滑块，结合后端进行二次校验，能有效避免被恶意抓取后的模拟验证，进一步提升验证码的可靠性。
 
 :white_check_mark: 自定义主题配色 :evergreen_tree:
 
@@ -26,12 +26,12 @@ npm i YS-captcha
 
 ```ts
 import { createApp } from 'vue'
-import MakeitCaptcha from 'YS-captcha'
+import YSCaptcha from 'YS-captcha'
 import 'YS-captcha/dist/captcha.min.css'
 import App from './app.vue'
 
 const app = createApp(App)
-app.use(MakeitCaptcha)
+app.use(YSCaptcha)
 app.mount('#app')
 ```
 
@@ -84,7 +84,3 @@ app.mount('#app')
     }
 </script>
 ```
-
-## 更多
-
-> 更多定制化内容及使用请查看在线示例：[https://admin.makeit.vip/components/captcha](https://admin.makeit.vip/components/captcha)
